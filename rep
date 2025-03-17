@@ -1,0 +1,81 @@
+$ export GITHUB_USERNAME=StariiShmix
+$ export GIST_TOKEN=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
+$ alias edit=nano
+$ mkdir -p ${GITHUB_USERNAME}/workspace
+$ cd ${GITHUB_USERNAME}/workspace
+$ pwd
+/home/vladislav/StariiShmix/workspace
+$ cd ..
+$ pwd
+/home/vladislav/StariiShmix
+$ mkdir -p workspace/tasks/
+$ mkdir -p workspace/projects/
+$ mkdir -p workspace/reports/
+$ cd workspace
+ sudo wget https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+[sudo] password for vladislav: 
+--2025-03-17 12:04:27--  https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+Resolving nodejs.org (nodejs.org)... 172.66.128.116, 104.20.3.6, 2606:4700:10::6814:306, ...
+Connecting to nodejs.org (nodejs.org)|172.66.128.116|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 9356460 (8,9M) [application/x-xz]
+Saving to: ‘node-v6.11.5-linux-x64.tar.xz’
+node-v6.11.5-linux-  21%[===>                ]   1,88M   280KB/s    in 49s     
+
+2025-03-17 12:05:30 (39,1 KB/s) - Read error at byte 1970176/9356460 (Connection reset by peer). Retrying.
+
+--2025-03-17 12:05:31--  (try: 2)  https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+Connecting to nodejs.org (nodejs.org)|172.66.128.116|:443... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Retrying.
+
+--2025-03-17 12:05:34--  (try: 3)  https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+Connecting to nodejs.org (nodejs.org)|172.66.128.116|:443... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Retrying.
+
+--2025-03-17 12:05:37--  (try: 4)  https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+Connecting to nodejs.org (nodejs.org)|172.66.128.116|:443... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Retrying.
+
+--2025-03-17 12:05:42--  (try: 5)  https://nodejs.org/dist/v6.11.5/node-v6.11.5-linux-x64.tar.xz
+Connecting to nodejs.org (nodejs.org)|172.66.128.116|:443... connected.
+$ sudo rm -rf node-v6.11.5-linux-x64.tar.xz
+$ sudo mv node-v6.11.5-linux-x64 node
+$ ls node/bin
+node  npm
+$ echo ${PATH}
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+$ export PATH=${PATH}:`pwd`/node/bin
+$ echo ${PATH}
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/vladislav/StariiShmix/workspace/node/bin
+$mkdir scripts
+mkdir: created directory 'scripts'
+ cat > scripts/activate<<EOF
+> export PATH=\${PATH}:`pwd`/node/bin
+> EOF
+$ source scripts/activate
+ sudo apt install gist
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+gist is already the newest version (6.0.0-3).
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+$ (umask 0077 && echo ${GIST_TOKEN} > ~/.gist)
+gist REPORT.md
+$ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
+fatal: destination path 'tasks/lab01' already exists and is not an empty directory.
+$ mkdir reports/lab${LAB_NUMBER}
+mkdir: cannot create directory ‘reports/lab01’: File exists
+$ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
+$ cd reports/lab${LAB_NUMBER}
+$ edit REPORT.md
+$ edit REPORT.md
+
+
+
+
+
+
+mkdir: created directory 'scripts'
