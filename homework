@@ -1,0 +1,85 @@
+$ wget  https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
+--2025-03-17 12:33:44--  https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
+Resolving sourceforge.net (sourceforge.net)... 104.18.13.149, 104.18.12.149, 2606:4700::6812:c95, ...
+Connecting to sourceforge.net (sourceforge.net)|104.18.13.149|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/ [following]
+--2025-03-17 12:33:45--  https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/
+Reusing existing connection to sourceforge.net:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/download [following]
+--2025-03-17 12:33:46--  https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/download
+Reusing existing connection to sourceforge.net:443.
+HTTP request sent, awaiting response... 302 Found
+Location: https://downloads.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?ts=gAAAAABn1-x6IAGSKt9kpFfvBXDTE_-z4f1JZWDMvxfAGtwMLvMl24w4_AWlhIjDTQRU6UkdnNt6akrUB51nR_22P45otwRIsg%3D%3D&use_mirror=kumisystems&r= [following]
+--2025-03-17 12:33:46--  https://downloads.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?ts=gAAAAABn1-x6IAGSKt9kpFfvBXDTE_-z4f1JZWDMvxfAGtwMLvMl24w4_AWlhIjDTQRU6UkdnNt6akrUB51nR_22P45otwRIsg%3D%3D&use_mirror=kumisystems&r=
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... 104.18.13.149, 104.18.12.149, 2606:4700::6812:c95, ...
+Connecting to downloads.sourceforge.net (downloads.sourceforge.net)|104.18.13.149|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://kumisystems.dl.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?viasf=1 [following]
+--2025-03-17 12:33:47--  https://kumisystems.dl.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?viasf=1
+Resolving kumisystems.dl.sourceforge.net (kumisystems.dl.sourceforge.net)... 148.251.120.111, 2a01:4f8:210:1057::2
+Connecting to kumisystems.dl.sourceforge.net (kumisystems.dl.sourceforge.net)|148.251.120.111|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 111710205 (107M) [application/x-gzip]
+Saving to: ‘boost_1_69_0.tar.gz’
+
+boost_1_69_0.tar.gz    100%[==========================>] 106,53M   409KB/s    in 2m 56s  
+
+2025-03-17 12:36:45 (619 KB/s) - ‘boost_1_69_0.tar.gz’ saved [111710205/111710205]
+$ tar -xf boost_1_69_0.tar.gz 
+rm -rf boost_1_69_0.tar.gz
+find . -maxdepth 1 -type f | wc -l 
+12
+find . -type f | wc -l
+61191
+$ find  -type f -name "*.cpp" | wc -l
+13774 
+$find  -type f -name "*.h" | wc -l 
+296  
+$ find -type f ! -name "*.h" ! -name "*.cpp" | wc -l
+47122
+
+$ find -name "any.hpp"
+//
+/boost/spirit/home/support/algorithm/any.hpp
+/boost_1_69_0/libs/fiber/examples/asio/round_robin.hpp
+boost_1_69_0/libs/fiber/examples/asio/exchange.cpp
+boost_1_69_0/libs/fiber/examples/asio/ps/publisher.cpp
+boost_1_69_0/libs/fiber/examples/asio/ps/server.cpp
+boost_1_69_0/libs/fiber/examples/asio/ps/subscriber.cpp
+boost_1_69_0/libs/fiber/examples/asio/autoecho.cpp
+boost_1_69_0/libs/fiber/doc/fibers.qbk
+boost_1_69_0/libs/fiber/doc/callbacks.qbk
+boost_1_69_0/libs/fiber/doc/integration.qbk
+boost_1_69_0/libs/fiber/doc/asio.qbk
+//вот пример нескольких файлов
+$sudo apt install libicu-dev
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  icu-devtools
+Suggested packages:
+  icu-doc
+The following NEW packages will be installed:
+  icu-devtools libicu-dev
+0 upgraded, 2 newly installed, 0 to remove and 1 not upgraded.
+Need to get 12,1 MB of archives.
+After this operation, 49,7 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 icu-devtools amd64 74.2-1ubuntu3.1 [212 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libicu-dev amd64 74.2-1ubuntu3.1 [11,9 MB]
+Fetched 12,1 MB in 5s (2 565 kB/s)       
+Selecting previously unselected package icu-devtools.
+(Reading database ... 195678 files and directories currently installed.)
+Preparing to unpack .../icu-devtools_74.2-1ubuntu3.1_amd64.deb ...
+Unpacking icu-devtools (74.2-1ubuntu3.1) ...
+Selecting previously unselected package libicu-dev:amd64.
+Preparing to unpack .../libicu-dev_74.2-1ubuntu3.1_amd64.deb ...
+Unpacking libicu-dev:amd64 (74.2-1ubuntu3.1) ...
+Setting up icu-devtools (74.2-1ubuntu3.1) ...
+Setting up libicu-dev:amd64 (74.2-1ubuntu3.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+./bootstrap.sh --prefix=boost_output --with-icu= 
+
